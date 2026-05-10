@@ -1,0 +1,75 @@
+:root {
+    --bg-color: #fff5f5;
+    --text-color: #d63384;
+    --accent-color: #ff8fab;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 花びらの背景アニメーション用 */
+.petal {
+    position: absolute;
+    background-color: #ffc0cb;
+    border-radius: 150% 0 150% 0;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* メッセージコンテナ */
+.message-container {
+    text-align: center;
+    z-index: 10;
+    padding: 20px;
+}
+
+.line {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    opacity: 0;
+    transform: translateY(20px);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* アニメーション用クラス */
+.fade-in-up {
+    animation: fadeInUp 2s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 最後に現れるブーケ */
+.flower-icon {
+    font-size: 5rem;
+    opacity: 0;
+    margin-top: 30px;
+}
+
+.show-flower {
+    animation: heartBeat 1.5s infinite forwards;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
